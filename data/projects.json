@@ -1,0 +1,55 @@
+{
+	"projects": [
+		{
+			"id": 1,
+			"title": "NLP Personality Prediction",
+			"name": "nlp-personality",
+			"description": [
+				"Developed an NLP prediction model with a dataset of essays, using bidirectional LSTM model on analyzing based on five-factor model of psychology.",
+				"Proposed a solution architecture utilizing SageMaker, Lex, Lambda and Serverless Application Model on Amazon Web Services. "
+			],
+			"url": "https://github.com/NY1105/SHG_Hackathon_2023_ML",
+			"image": "/tensorflow.png"
+		},
+		{
+			"id": 2,
+			"title": "Frontend Dev - Rate Your Agents",
+			"name": "rya",
+			"description": [
+				"Co-developed a website for rating headhunt agents, using Next.js, Tailwind CSS, and Redux."
+			],
+			"url": "/",
+			"image": "/tailwind.png"
+		},
+		{
+			"id": 3,
+			"title": "MERN Stack Project",
+			"name": "mern",
+			"description": [
+				"Built a complete environment on managing software tools with the MERN stack, deployed using cPanel."
+			],
+			"url": "/",
+			"image": "/React.png"
+		},
+		{
+			"id": 4,
+			"title": "NEAT Forex Trading",
+			"name": "neat",
+			"description": [
+				"Created artificial neural networks with NEAT algorithm for developing forex trading strategy."
+			],
+			"url": "https://github.com/NY1105/NEAT-Forex-Trading",
+			"image": "/NEAT.png"
+		},
+		{
+			"id": 5,
+			"title": "Django Backtesting",
+			"name": "backtest",
+			"description": [
+				"Developed a website interface for a backtesting tool, visualized the price data and the strategy analysis."
+			],
+			"url": "https://github.com/NY1105/Backtester-with-Django",
+			"image": "/django.png"
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+  "versions": [
+    {
+      "version": "2.1.0",
+      "date": "10/3/2023",
+      "image": "/versions/2.1.0.png",
+      "display": false
+    },
+    {
+      "version": "2.0.0",
+      "date": "6/3/2023",
+      "image": "/versions/2.0.0.png",
+      "display": true
+    },
+    {
+      "version": "1.1.0",
+      "date": "4/3/2023",
+      "image": "/versions/1.1.0.png",
+      "display": true
+    },
+    {
+      "version": "1.0.0",
+      "date": "29/1/2023",
+      "image": "/versions/1.0.0.png",
+      "display": true
+    }
+  ]
+}
