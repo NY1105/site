@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const Footer = () => {
+  const currentVersion = '2.1.1'
   let router = useRouter()
   const buttons = [
     {
@@ -20,7 +21,7 @@ const Footer = () => {
           router.push('/versions')
         }}
       >
-        Version 2.1.0
+        Version {currentVersion}
       </div>
       <div className="flex flex-col items-center sm:grow sm:items-end ">
         <div className=" flex justify-middle ">
@@ -41,7 +42,7 @@ const Footer = () => {
             router.push('/versions')
           }}
         >
-          Version 2.1.0
+          Version {currentVersion}
         </div>
       </div>
     </div>
