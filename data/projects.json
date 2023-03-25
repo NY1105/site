@@ -8,7 +8,7 @@
 				"Developed an NLP prediction model with a dataset of essays, using bidirectional LSTM model on analyzing based on five-factor model of psychology.",
 				"Proposed a solution architecture utilizing SageMaker, Lex, Lambda and Serverless Application Model on Amazon Web Services. "
 			],
-			"url": "https://github.com/NY1105/SHG_Hackathon_2023_ML",
+			"url": "https://github.com/NY1105/SHG_Hackathon_2023_ML/blob/master/Case3-const.pdf",
 			"image": "/tensorflow.png"
 		},
 		{

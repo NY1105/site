@@ -13,7 +13,7 @@ const RenderContainer = ({
         divClassName || ''
       }`}
     >
-      <div className="text-2xl px-1 py-2">{title}</div>
+      {title && (<div className="text-2xl px-1 py-2">{title}</div>)}
       <div className={`${childrenClassName || 'flex justify-center'} `}>
         {children}
       </div>

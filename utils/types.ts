@@ -7,7 +7,17 @@ export type Project = {
 	image: string
 }
 
+export type Experience = {
+	id: number
+	shortname: string
+	title: string
+	organization: string
+	url: string
+	image: string
+}
+
 export type Projects = { projects: Project[] }
+export type Experiences = { experiences: Experience[] }
 
 export type Message = {
 	message: string

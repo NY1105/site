@@ -1,0 +1,20 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "shortname": "SHG",
+      "title": "Champion, Leader, Machine Learning Engineer, Solution Architect",
+      "organization": "Swire Hotels Hackathon 2023",
+      "url": "https://github.com/NY1105/SHG_Hackathon_2023_ML/blob/master/Case3-const.pdf",
+      "image": "/organisations/swire.jpeg"
+    },
+    {
+      "id": 2,
+      "shortname": "FF",
+      "title": "Junior Software Developer",
+      "organization": "Forex Forest Algorithmic Trading",
+      "url": "https://forexforest.net/",
+      "image": "/organisations/ff.png"
+    }
+  ]
+}

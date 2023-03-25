@@ -4,7 +4,10 @@ import RenderContainer from './RenderContainer'
 
 const RenderEducation = () => {
   return (
-    <RenderContainer title="Education" childrenClassName="flex justify-center py-3">
+    <RenderContainer
+      title="Education"
+      childrenClassName="flex justify-center py-3 h-max"
+    >
       <div className="flex justify-center ">
         <div className="mr-2 w-12 h-12 md:w-20 md:h-20">
           <img
