@@ -26,9 +26,9 @@
 			"title": "MERN Stack Project",
 			"name": "mern",
 			"description": [
-				"Built a complete environment on managing software tools with the MERN stack, deployed using cPanel."
+				"Built a CRUD app on managing personal experiences with the MERN stack, deployed using cPanel."
 			],
-			"url": "https://github.com/NY1105/present",
+			"url": "/",
 			"image": "/React.png"
 		},
 		{
