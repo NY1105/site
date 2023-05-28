@@ -1,6 +1,7 @@
 ---
 deployment:
- tasks:
- - export DEPLOYPATH=/home/nichvoyb/public_html/
- - /bin/cp index.html $DEPLOYPATH
- - /bin/cp style.css $DEPLOYPATH
+  tasks:
+    - export DEPLOYPATH=/home/nichvoyb/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+    - npm run build
