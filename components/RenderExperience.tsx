@@ -6,6 +6,9 @@ import ExperienceData from '@/data/experiences.json'
 
 const RenderExperience = () => {
   const experiences = ExperienceData.experiences
+  experiences.sort((a: Experience, b: Experience) => {
+    return b.id - a.id
+  })
   return (
     <RenderContainer
       title="Experience"
