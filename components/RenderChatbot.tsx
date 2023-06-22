@@ -3,29 +3,28 @@ import RenderContainer from './RenderContainer'
 import { Message } from '@/utils/types'
 import { Chat } from './Chat/Chat'
 
-const RenderIntro = () => {
+const RenderChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([])
+  const [chatHistory, setChatHistory] = useState<String[][]>([])
   const [loading, setLoading] = useState<boolean>(false)
-
 
   const handleSend = async (message: Message) => {
     const updatedMessages = [...messages, message]
-
+    const updatedChatHistory = [...chatHistory, [message.content, '']]
     setMessages(updatedMessages)
     setLoading(true)
-
-    const response = await fetch('/api/chat', {
+    setChatHistory(updatedChatHistory)
+    const response = await fetch('/api/langchain', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify({
-        messages: updatedMessages,
+        messages: updatedChatHistory,
       }),
     })
 
     if (!response.ok) {
       setLoading(false)
+      console.log(JSON.stringify({
+        messages: updatedChatHistory}))
       alert('Something went wrong. Please try again later.')
       // throw new Error(response.statusText)
     }
@@ -67,6 +66,11 @@ const RenderIntro = () => {
           return [...messages.slice(0, -1), updatedMessage]
         })
       }
+      setChatHistory((chatHistory) => {
+        const lastChat = chatHistory[chatHistory.length - 1]
+        const updatedChat = [lastChat[0], chunkValue]
+        return [...chatHistory.slice(0, -1), updatedChat]
+      })
     }
   }
 
@@ -74,17 +78,31 @@ const RenderIntro = () => {
     setMessages([
       {
         role: 'assistant',
-        content: `Hi there! I'm Nicholas! Nice to meet you. \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+        content: `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
       },
     ])
+    setChatHistory([
+      [
+        '',
+        `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+      ],
+    ])
+    console.log(chatHistory)
+
   }
 
   useEffect(() => {
     setMessages([
       {
         role: 'assistant',
-        content: `Hi there! I'm Nicholas! Nice to meet you. \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+        content: `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
       },
+    ])
+    setChatHistory([
+      [
+        '',
+        `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+      ],
     ])
   }, [])
 
@@ -102,4 +120,4 @@ const RenderIntro = () => {
   )
 }
 
-export default RenderIntro
+export default RenderChatbot

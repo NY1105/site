@@ -1,5 +1,5 @@
 import RenderProjects from '@/components/RenderProjects'
-import RenderIntro from '@/components/RenderIntro'
+import RenderChatbot from '@/components/RenderChatbot'
 import RenderEducation from '@/components/RenderEducation'
 import RenderExperience from '@/components/RenderExperience'
 
@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<div className="">
 			<div className="md:flex">
-				<RenderIntro />
+				<RenderChatbot />
 				<RenderProjects />
 			</div>
 			<div className="">

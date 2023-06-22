@@ -108,3 +108,8 @@ dist
 .vscode/
 
 .next.zip
+
+**/*venv*/
+
+**/.chroma
+**/SECRETS.*

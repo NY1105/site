@@ -15,17 +15,21 @@ interface Props {
 export const Chat: FC<Props> = ({ messages, loading, onSend, onReset }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: 'smooth' })
+    messagesEndRef.current?.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: 'smooth',
+    })
   }
   useEffect(() => {
     scrollToBottom()
   }, [messages])
   return (
     <>
-      <div className="flex flex-col rounded-lg sm:px-2 sm:p-4 sm:border border-neutral-300 " >
+      <div className="flex flex-col rounded-lg sm:px-2 sm:p-4 sm:border border-neutral-300 ">
         <div className="overflow-y-scroll h-[30rem] scroll-smooth rounded-md">
           {messages.map((message, index) => (
-            <div key={index} className="my-1 sm:my-1.5" >
+            <div key={index} className="my-1 sm:my-1.5">
               <ChatMessage message={message} />
             </div>
           ))}
