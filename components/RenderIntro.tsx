@@ -1,19 +1,102 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import RenderContainer from './RenderContainer'
+import { Message } from '@/utils/types'
+import { Chat } from './Chat/Chat'
 
 const RenderIntro = () => {
+  const [messages, setMessages] = useState<Message[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+
+
+  const handleSend = async (message: Message) => {
+    const updatedMessages = [...messages, message]
+
+    setMessages(updatedMessages)
+    setLoading(true)
+
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        messages: updatedMessages,
+      }),
+    })
+
+    if (!response.ok) {
+      setLoading(false)
+      alert('Something went wrong. Please try again later.')
+      // throw new Error(response.statusText)
+    }
+
+    const data = response.body
+
+    if (!data) {
+      return
+    }
+
+    setLoading(false)
+
+    const reader = data.getReader()
+    const decoder = new TextDecoder()
+    let done = false
+    let isFirst = true
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read()
+      done = doneReading
+      const chunkValue = decoder.decode(value)
+
+      if (isFirst) {
+        isFirst = false
+        setMessages((messages) => [
+          ...messages,
+          {
+            role: 'assistant',
+            content: chunkValue,
+          },
+        ])
+      } else {
+        setMessages((messages) => {
+          const lastMessage = messages[messages.length - 1]
+          const updatedMessage = {
+            ...lastMessage,
+            content: lastMessage.content + chunkValue,
+          }
+          return [...messages.slice(0, -1), updatedMessage]
+        })
+      }
+    }
+  }
+
+  const handleReset = () => {
+    setMessages([
+      {
+        role: 'assistant',
+        content: `Hi there! I'm Nicholas! Nice to meet you. \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+      },
+    ])
+  }
+
+  useEffect(() => {
+    setMessages([
+      {
+        role: 'assistant',
+        content: `Hi there! I'm Nicholas! Nice to meet you. \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
+      },
+    ])
+  }, [])
+
   return (
-    <RenderContainer divClassName="flex flex-col justify-center ">
-      <div className="pb-5 flex flex-col align-middle ">
-        <p className="text-2xl">Hi there</p>
-        <br />
-        <p className="text-4xl">
-          I'm <span className="font-semibold">Nicholas</span>
-        </p>
-        <br />
-        <p className="lg:text-lg">Nice to meet you</p>
-        <p className="lg:text-lg">Here are some coding projects I have done</p>
-        <p className="lg:text-lg">Feel free to take a tour!</p>
+    <RenderContainer divClassName="flex flex-col justify-center lg:max-w-[40%] ">
+      <div className=" flex flex-col align-middle ">
+        <Chat
+          messages={messages}
+          loading={loading}
+          onSend={handleSend}
+          onReset={handleReset}
+        />
       </div>
     </RenderContainer>
   )

@@ -1,6 +1,6 @@
 {
   "name": "refrontend",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,10 +14,12 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
+    "eventsource-parser": "^1.0.0",
     "next": "13.2.3",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
     "typescript": "4.9.5"
   },
   "devDependencies": {
