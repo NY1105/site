@@ -5,6 +5,9 @@ import ProjectData from '@/data/projects.json'
 
 const ProjectsContainer = () => {
   const projects = ProjectData.projects
+  projects.sort((a: Project, b: Project) => {
+    return b.id - a.id
+  })
   return (
     <div className="pb-3 overflow-auto ">
       {projects.map((project: Project) => (

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import ProjectData from '@/data/projects.json'
 import { Project } from '@/utils/types'
-import ProjectDetails from '@/components/ProjectDetails'
+import ProjectDetails from '@/components/Projects/ProjectDetails'
 
 const ProjectDetail = () => {
   const router = useRouter()

@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectsContainer from '@/components/ProjectsContainer'
+import ProjectsContainer from '@/components/Projects/ProjectsContainer'
 import RenderContainer from '@/components/RenderContainer'
 
 const Projects = () => {
