@@ -51,9 +51,9 @@ export const ChatInput: FC<Props> = ({ onSend, onReset }) => {
       <div className="flex-1">
         <textarea
           ref={textareaRef}
-          className=" px-4 py-2 w-full rounded-lg focus:outline-none "
+          className=" px-1.5 sm:px-3 py-2 w-full rounded-lg focus:outline-none "
           style={{ resize: 'none' }}
-          placeholder="Type a message..."
+          placeholder='Type a message'
           value={content}
           rows={1}
           onChange={handleChange}

@@ -27,7 +27,7 @@
       "description": [
         "Built a CRUD app on managing personal experiences with the MERN stack, deployed using cPanel."
       ],
-      "url": "/",
+      "url": "https://nicholasyan.site/",
       "image": "/React.png"
     },
 
@@ -59,7 +59,7 @@
       "description": [
         "Developed a chatbot with web UI for retrieving information, using ChatGPT"
       ],
-      "url": "/",
+      "url": "https://nicholasyan.site/",
       "image": "/langchain.png"
     }
   ]

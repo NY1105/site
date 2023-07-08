@@ -60,8 +60,15 @@ Version Page (https://nicholasyan.site/versions):
   A list of past version of this website. Showcasing 3 versions: 1.0.0, 1.1.0, 2.0.0 
   Each version has an Version Number and an Image of the website UI in that version.
 
-Project List (NOT A PAGE):
-  [
+Project List (NOT A PAGE) (Newest to oldest):
+  [ {
+      "title": "Langchain Conversational Retrieval Bot",
+      "name": "langchain-chatbot",
+      "description": [
+        "Developed a chatbot with web UI for retrieving information, using ChatGPT"
+      ],
+      "url": "https://nicholasyan.site/",
+    },
 		{
 			"title": "NLP Personality Prediction",
 			"project_shortname": "nlp-personality",
@@ -85,7 +92,7 @@ Project List (NOT A PAGE):
 			"description": [
 				"Built a CRUD app on managing personal experiences with the MERN stack, deployed using cPanel."
 			],
-			"url": "/",
+			"url": "https://nicholasyan.site/",
 		},
 		{
 			"title": "NEAT Forex Trading",
@@ -105,7 +112,7 @@ Project List (NOT A PAGE):
 		}
 	]
 
-Experiences List (NOT A PAGE):
+Experiences List (NOT A PAGE) (Newest to oldest):
   [
     {
       "experience_shortname": "AXA",

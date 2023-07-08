@@ -94,7 +94,6 @@ const RenderChatbot = () => {
         `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
       ],
     ])
-    console.log(chatHistory)
 
   }
 
@@ -114,7 +113,7 @@ const RenderChatbot = () => {
   }, [])
 
   return (
-    <RenderContainer divClassName="flex flex-col justify-center lg:max-w-[40%] ">
+    <RenderContainer divClassName="flex flex-col justify-center md:max-w-[50%] lg:max-w-[40%] ">
       <div className=" flex flex-col align-middle ">
         <Chat
           messages={messages}
