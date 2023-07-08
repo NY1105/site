@@ -1,6 +1,6 @@
 import router from 'next/router'
 import React from 'react'
-import ProjectsContainer from './ProjectsContainer'
+import ProjectsContainer from './Projects/ProjectsContainer'
 import RenderContainer from './RenderContainer'
 
 const RenderProjects = () => {

@@ -1,7 +1,7 @@
 import { Project } from '@/utils/types'
 import router from 'next/router'
 import React from 'react'
-import RenderContainer from './RenderContainer'
+import RenderContainer from '../RenderContainer'
 
 const ProjectDetails = (props: Project) => {
   const { title, name, description, url, image } = props
