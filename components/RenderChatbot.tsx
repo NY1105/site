@@ -14,19 +14,26 @@ const RenderChatbot = () => {
     setMessages(updatedMessages)
     setLoading(true)
     setChatHistory(updatedChatHistory)
+     // langchain
     const response = await fetch('/api/langchain', {
       method: 'POST',
       body: JSON.stringify({
         messages: updatedChatHistory,
       }),
     })
-
+    // // chat
+    // const response = await fetch('/api/chat', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     messages: updatedMessages,
+    //   }),
+    // })
     if (!response.ok) {
       setLoading(false)
-      console.log(JSON.stringify({
-        messages: updatedChatHistory}))
       alert('Something went wrong. Please try again later.')
-      // throw new Error(response.statusText)
     }
 
     const data = response.body

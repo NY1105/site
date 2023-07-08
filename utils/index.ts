@@ -6,54 +6,23 @@ import {
 } from 'eventsource-parser'
 
 export const langchainStream = async (messages: Message[]) => {
-  const encoder = new TextEncoder()
-  const decoder = new TextDecoder()
 
-  const res = await fetch(process.env.API_PATH, {
+
+  const question = messages[messages.length - 1].content || ''
+  const res = await fetch(String(process.env.API_PATH), {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      messages: messages,
+      question: question,
+      chat_history: messages,
     }),
   })
   if (res.status !== 200) {
-    throw new Error('Langchain returned an error')
+    throw new Error(`Langchain returned an error ${res.status}`)
   }
   return res
-  // const stream = new ReadableStream({
-  //   async start(controller) {
-  //     const onParse = (event: ParsedEvent | ReconnectInterval) => {
-  //       if (event.type === 'event') {
-  //         const data = event.data
-
-  //         if (data === '[DONE]') {
-  //           controller.close()
-  //           return
-  //         }
-
-  //         try {
-  //           const json = JSON.parse(data)
-  //           const text = json.choices[0].delta.content
-  //           const queue = encoder.encode(text)
-  //           controller.enqueue(queue)
-  //         } catch (e) {
-  //           controller.error(e)
-  //         }
-  //       }
-  //     }
-
-  //     const parser = createParser(onParse)
-
-  //     for await (const chunk of res.body as any) {
-  //       parser.feed(decoder.decode(chunk))
-  //     }
-  //   },
-  // })
-
-  // return stream
 }
 
 export const OpenAIStream = async (messages: Message[]) => {

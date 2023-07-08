@@ -5,8 +5,8 @@ export const config = {
   runtime: 'edge',
 }
 
-const handler = async (req: Request): Promise<String> => {
-  try {
+const handler = async (req: Request): Promise<Response> => {
+try {
     const { messages } = (await req.json()) as {
       messages: Message[]
     }
@@ -26,10 +26,10 @@ const handler = async (req: Request): Promise<String> => {
 
     const res = await langchainStream(messages)
 
-    return res.text()
+    return res
   } catch (error) {
     console.error(error)
-    return String(error)
+    return new Response('Error', { status: 500 })
   }
 }
 
