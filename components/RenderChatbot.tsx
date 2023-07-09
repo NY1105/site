@@ -14,13 +14,26 @@ const RenderChatbot = () => {
     setMessages(updatedMessages)
     setLoading(true)
     setChatHistory(updatedChatHistory)
-     // langchain
-    const response = await fetch('/api/langchain', {
+
+    // non edge
+
+    const response = await fetch(String(process.env.NEXT_PUBLIC_API_PATH), {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        messages: updatedChatHistory,
+        question: message.content,
+        chat_history: chatHistory,
       }),
     })
+    //  // langchain
+    // const response = await fetch('/api/langchain', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     messages: updatedChatHistory,
+    //   }),
+    // })
     // // chat
     // const response = await fetch('/api/chat', {
     //   method: 'POST',
@@ -94,7 +107,6 @@ const RenderChatbot = () => {
         `Hi there! I'm Nicholas. Nice to meet you! \nHere are some coding projects I have done. \nFeel free to take a tour, or Chat with me!`,
       ],
     ])
-
   }
 
   useEffect(() => {
