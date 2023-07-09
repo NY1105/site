@@ -47,7 +47,7 @@ export const ChatInput: FC<Props> = ({ onSend, onReset }) => {
   }, [content])
 
   return (
-    <div className="flex min-h-[44px] rounded-lg focus:outline-none focus:ring-1 focus:ring-neutral-300 border-2 border-neutral-200 bg-[#3b3b3b]">
+    <div className="flex min-h-[44px] rounded-lg focus:outline-none focus:ring-1 focus:ring-neutral-300 border-2 border-neutral-200 bg-white dark:bg-[#3b3b3b] ">
       <div className="flex-1">
         <textarea
           ref={textareaRef}

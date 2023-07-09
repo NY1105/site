@@ -1,5 +1,6 @@
 import { Message } from '@/utils/types'
 import { FC } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 interface Props {
   message: Message
@@ -13,14 +14,15 @@ export const ChatMessage: FC<Props> = ({ message }) => {
       }`}
     >
       <div
+        style={{wordBreak: "break-word"}}
         className={`flex items-center ${
           message.role === 'assistant'
-            ? 'bg-neutral-200 text-neutral-900'
+            ? 'bg-white dark:bg-neutral-200 text-neutral-900'
             : 'bg-blue-500 text-white'
-        } rounded-2xl px-3 py-2 max-w-[85%] md:max-w-[67%] `}
+        }  rounded-2xl px-3 py-2 max-w-[85%] md:max-w-[67%]`}
         // style={{ overflowWrap: "anywhere" }}
       >
-        {message.content}
+        <ReactMarkdown>{message.content}</ReactMarkdown>
       </div>
     </div>
   )
