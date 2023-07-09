@@ -1,0 +1,4 @@
+SECRETS.json
+/venv
+/__pycache__
+/.vscode

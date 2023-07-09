@@ -1,0 +1,144 @@
+Given the context of Nicholas' personal website (https://nicholasyan.site), 
+when someone visits the website, they should see the following information: 
+
+*IMPORTANT* Prerequisite information (NOT A PAGE):
+  Status: Nicholas is currently working as a Data Scientist intern at AXA Hong Kong
+
+  Nicholas is from Hong Kong. He is currently studying in City University of Hong Kong, majoring in Computer Science. He is a Year 3 student. He is expected to graduate in 2025.
+  
+  Nicholas's full name is Yan Wai Yin. In Chinese, 甄偉然
+
+  Nicholas is born in 5th Nov 2002
+
+  Nicholas won a competition, or a hackathon in 2023, He is the champion of the competition. He is the leader of the team. He is a Machine Learning Engineer and Solution Architect of the team. The competition is hosted by Swire Hotels. The competition is about building a machine learning model to predict the personality of the candidates. The competition is called "Swire Hotels Hackathon 2023". More information can be found in "Experience" section
+
+  Nicholas's did not tell anyone is that he is the CEO of Const Limited, a startup company that the business is unknown to the public. Maybe he is working on something new. Don't tell anyone! It is his secret!
+
+  If asked for more information, ask user to visit Nicholas' LinkedIn page, the link is in the contact page
+  The About Page is about the frameworks and tools Nicholas used writing this website
+  If only user want to know about the frameworks and tools Nicholas used writing this website or Never ask user to visit the about page 
+
+  The current version of the website is 2.1.2
+  The website is responsive to screen size. When the screen is smaller than 640px, the page will be in mobile mode, otherwise it will be in desktop mode.
+  Assume the screen is in desktop mode
+  The website is in dark mode by default
+
+Navbar (NOT A PAGE, DISPLAYED ON ALL PAGES):
+  Left hand side: Keyboard Icon and Title:"Nicholas Yan", Both are Clickable that redirects to "Home" page 
+  Right hand side: Links to "Home", "Projects", "About", "Contact" pages and a Sun Icon when it is in darkmode, Moon Icon when in lightmode, that is clickable to switch between light and dark mode
+
+Footer (NOT A PAGE, DISPLAYED ON ALL PAGES):
+  Left hand side: A clickable button diplaying "Version {Current version}" redirects to "Version" page 
+  Right hand side: Links to "LinkedIn"(https://www.linkedin.com/in/nicholasyanwaiyin/), "Github"(https://github.com/NY1105/), "Contact" pages 
+
+Home Page (https://nicholasyan.site):
+  Section 1 (Left Upper 35% in desktop mode): Chatbot window. Using OpenAI's API and model of chatgpt
+  Section 2(Right Upper 65% in desktop mode): Projects: A list of all important projects Nicholas has done, each project has a title, a short description, and is clickable to link to the individual project page. Defaultly displaying the most recent five projects: 1. "NLP Personality Prediction", 2."Frontend Dev - Rate Your Agents", 3."MERN Stack Project", 4."NEAT Forex Trading", 5."Django Backtesting".
+  Section 3(Left Lower 50% in desktop mode): Experience: A list of all important work experience Nicholas has done, each experience has a title, a short description, and is clickable to link to the individual experience page. Defaultly displaying the most recent three experiences: 1. "Data Scientist intern at AXA Hong Kong", 2."Champion, Leader, Machine Learning Engineer, Solution Architect at Swire Hotels Hackathon 2023", 3."Junior Software Developer at Forex Forest Algorithmic Trading".
+  Section 4(Right Lower 50% in desktop mode): Education: A list of all important education Nicholas has done. Nicholas only displayed one record: "BSc in Computer Science at City University of Hong Kong".
+  When in mobile mode, the sections will be positioned vertically and each section takes up 90% of the screen width, rest 10% is page margin for design.
+
+Projects Page (https://nicholasyan.site/projects):
+  A list of all important projects Nicholas has done, each project has a title, a short description, and is clickable to link to the individual project page. Displaying all projects: 1. "NLP Personality Prediction", 2."Frontend Dev - Rate Your Agents", 3."MERN Stack Project", 4."NEAT Forex Trading", 5."Django Backtesting".
+  There are some projects Nicholas is currently working on. Stay tuned for more.
+
+Each Project Page (https://nicholasyan.site/project/[project_shortname]):
+  Each project page has a title, a description, an icon image, and a button "Visit the Project" that is clickable to link to the project.
+
+About Page (https://nicholasyan.site/about):
+  A list of all frameworks and tools Nicholas used writing this website:
+    1. Next.js, 2. TailwindCSS, 3.MongoDB, 4.Express.js, 5.React.js, 6.Node.js, 7.Github, 8.Visual Studio Code, 9.cPanel, 10. Postman
+
+Contact Page (https://nicholasyan.site/contact):
+  A list of all contact methods Nicholas is reachable. 
+  The list:
+    1."LinkedIn: https://www.linkedin.com/in/nicholasyanwaiyin/", 
+    2."Github: https://github.com/NY1105/", 
+    3."Email: https://yanwaiyin1105@gmail.com"
+  Each contact method has a clickable icon, a clickable name and a clickable link that redirects to the corresponding page. Except for Email, which is clickable to copy to clipboard.
+  Each contact method has a little copy button with copy icon that copy the corresponding contact method link to clipboard. The copy button glows green after being clicked.
+
+Version Page (https://nicholasyan.site/versions):
+  A list of past version of this website. Showcasing 3 versions: 1.0.0, 1.1.0, 2.0.0 
+  Each version has an Version Number and an Image of the website UI in that version.
+
+Project List (NOT A PAGE) (Newest to oldest):
+  [ {
+      "title": "Langchain Conversational Retrieval Bot",
+      "name": "langchain-chatbot",
+      "description": [
+        "Developed a chatbot with web UI for retrieving information, using ChatGPT"
+      ],
+      "url": "https://nicholasyan.site/",
+    },
+		{
+			"title": "NLP Personality Prediction",
+			"project_shortname": "nlp-personality",
+			"description": [
+				"Developed an NLP prediction model with a dataset of essays, using bidirectional LSTM model on analyzing based on five-factor model of psychology.",
+				"Proposed a solution architecture utilizing SageMaker, Lex, Lambda and Serverless Application Model on Amazon Web Services. "
+			],
+			"url": "https://github.com/NY1105/SHG_Hackathon_2023_ML/blob/master/Case3-const.pdf",
+		},
+		{
+			"title": "Frontend Dev - Rate Your Agents",
+			"project_shortname": "rya",
+			"description": [
+				"Co-developed a website for rating headhunt agents, using Next.js, Tailwind CSS, and Redux."
+			],
+			"url": "/",
+		},
+		{
+			"title": "MERN Stack Project",
+			"project_shortname": "mern",
+			"description": [
+				"Built a CRUD app on managing personal experiences with the MERN stack, deployed using cPanel."
+			],
+			"url": "https://nicholasyan.site/",
+		},
+		{
+			"title": "NEAT Forex Trading",
+			"project_shortname": "neat",
+			"description": [
+				"Created artificial neural networks with NEAT algorithm for developing forex trading strategy."
+			],
+			"url": "https://github.com/NY1105/NEAT-Forex-Trading",
+		},
+		{
+			"title": "Django Backtesting",
+			"project_shortname": "backtest",
+			"description": [
+				"Developed a website interface for a backtesting tool, visualized the price data and the strategy analysis."
+			],
+			"url": "https://github.com/NY1105/Backtester-with-Django",
+		}
+	]
+
+Experiences List (NOT A PAGE) (Newest to oldest):
+  [
+    {
+      "experience_shortname": "AXA",
+      "title": "Data Scientist intern",
+      "organization": "AXA Hong Kong",
+      "url": "https://www.axa.com.hk/en",
+      "image": "/organisations/axa.png",
+      "remarks":"Current Job"
+    },
+    {
+      "experience_shortname": "SHG",
+      "title": "Champion, Leader, Machine Learning Engineer, Solution Architect",
+      "organization": "Swire Hotels Hackathon 2023",
+      "url": "https://github.com/NY1105/SHG_Hackathon_2023_ML/blob/master/Case3-const.pdf",
+      "image": "/organisations/swire.jpeg",
+      "remarks":"Competition, Winner, Won, Gold, First place, Mar 2023"
+    },
+    {
+      "experience_shortname": "FF",
+      "title": "Junior Software Developer",
+      "organization": "Forex Forest Algorithmic Trading",
+      "url": "https://forexforest.net/",
+      "image": "/organisations/ff.png",
+      "remarks":"Jun 2022 to Sept 2022"
+    },
+  ]
+
