@@ -113,9 +113,3 @@ dist
 
 **/.chroma
 **/SECRETS.*
-
-
-SECRETS.json
-/venv
-/__pycache__
-/.vscode

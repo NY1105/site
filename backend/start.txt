@@ -1,2 +1,0 @@
-source venv/bin/activate
-screen -d -m python -u app.py

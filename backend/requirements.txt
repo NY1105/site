@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-lanarky
-langchain
-faiss-cpu
-tiktoken
-openai
