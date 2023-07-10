@@ -16,12 +16,11 @@ const RenderChatbot = () => {
     setChatHistory(updatedChatHistory)
 
     // non edge
-
     const response = await fetch(String(process.env.NEXT_PUBLIC_API_PATH), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': String(process.env.NEXT_PUBLIC_API_KEY)
+        'x-api-key': String(process.env.NEXT_PUBLIC_API_KEY),
       },
       body: JSON.stringify({
         question: message.content,
@@ -49,7 +48,6 @@ const RenderChatbot = () => {
       setLoading(false)
       alert('Something went wrong. Please try again later.')
     }
-
     const data = response.body
 
     if (!data) {
@@ -62,37 +60,52 @@ const RenderChatbot = () => {
     const decoder = new TextDecoder()
     let done = false
     let isFirst = true
-
+    let msg = ''
     while (!done) {
       const { value, done: doneReading } = await reader.read()
       done = doneReading
       const chunkValue = decoder.decode(value)
+      msg += chunkValue
 
-      if (isFirst) {
-        isFirst = false
-        setMessages((messages) => [
-          ...messages,
-          {
-            role: 'assistant',
-            content: chunkValue,
-          },
-        ])
-      } else {
-        setMessages((messages) => {
-          const lastMessage = messages[messages.length - 1]
-          const updatedMessage = {
-            ...lastMessage,
-            content: lastMessage.content + chunkValue,
-          }
-          return [...messages.slice(0, -1), updatedMessage]
-        })
-      }
-      setChatHistory((chatHistory) => {
-        const lastChat = chatHistory[chatHistory.length - 1]
-        const updatedChat = [lastChat[0], chunkValue]
-        return [...chatHistory.slice(0, -1), updatedChat]
-      })
+      //   if (isFirst) {
+      //     isFirst = false
+      //     setMessages((messages) => [
+      //       ...messages,
+      //       {
+      //         role: 'assistant',
+      //         content: chunkValue,
+      //       },
+      //     ])
+      //   } else {
+      //     setMessages((messages) => {
+      //       const lastMessage = messages[messages.length - 1]
+      //       const updatedMessage = {
+      //         ...lastMessage,
+      //         content: lastMessage.content + chunkValue,
+      //       }
+      //       return [...messages.slice(0, -1), updatedMessage]
+      //     })
+      //   }
+      //   setChatHistory((chatHistory) => {
+      //     const lastChat = chatHistory[chatHistory.length - 1]
+      //     const updatedChat = [lastChat[0], chunkValue]
+      //     return [...chatHistory.slice(0, -1), updatedChat]
+      //   })
     }
+    const msgJson = JSON.parse(msg)
+    const msgJsonBody = JSON.parse(String(msgJson))
+    setMessages((messages) => [
+      ...messages,
+      {
+        role: 'assistant',
+        content: msgJsonBody.body,
+      },
+    ])
+    setChatHistory((chatHistory) => {
+      const lastChat = chatHistory[chatHistory.length - 1]
+      const updatedChat = [lastChat[0], msgJsonBody.body]
+      return [...chatHistory.slice(0, -1), updatedChat]
+    })
   }
 
   const handleReset = () => {
