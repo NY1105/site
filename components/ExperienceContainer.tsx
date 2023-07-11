@@ -13,7 +13,7 @@ export default ({ title, organization, shortname, url, image }: Experience) => {
         <img
           src={image}
           alt={shortname}
-          className="h-full object-scale-down aspect-square rounded-full"
+          className="h-full object-scale-down aspect-square rounded-full bg-neutral-100 dark:bg-white"
         ></img>
       </div>
       <div className="flex-1 flex flex-col justify-center mx-1 grow">

@@ -13,7 +13,7 @@ const RenderEducation = () => {
           <img
             src="/organisations/cityu.svg"
             alt="cityu"
-            className="h-full hover:cursor-pointer object-scale-down aspect-square"
+            className="h-full bg-white rounded-full dark:bg-neutral-100 hover:cursor-pointer object-scale-down aspect-square"
             onClick={() => window.open('https://www.cs.cityu.edu.hk/')}
           ></img>
         </div>
