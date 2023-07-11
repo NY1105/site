@@ -11,7 +11,7 @@ export default ({ title, name, description, url, image }: Project) => {
         // }
       }}
     >
-      <div className="flex m-1 flex-col justify-center h-10 dark:bg-gray-300 rounded-lg ">
+      <div className="flex m-1 flex-col justify-center h-10 bg-white dark:bg-gray-300 rounded-lg ">
         <img src={image} alt="icon" className=" w-10 p-1 "></img>
       </div>
       <div className="flex-1 flex flex-col mx-2 justify-center">
