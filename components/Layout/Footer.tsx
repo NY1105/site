@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const Footer = () => {
-  const currentVersion = '2.2.0'
+  const currentVersion = '2.2.1'
   let router = useRouter()
   const buttons = [
     {

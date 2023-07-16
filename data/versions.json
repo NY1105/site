@@ -1,6 +1,12 @@
 {
   "versions": [
     {
+      "version": "2.2.1",
+      "date": "16/7/2023",
+      "image": "",
+      "display": false
+    },
+    {
       "version": "2.2.0",
       "date": "8/7/2023",
       "image": "/versions/2.2.0.png",
