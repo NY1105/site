@@ -4,21 +4,21 @@ import router from 'next/router'
 export default ({ title, organization, shortname, url, image }: Experience) => {
   return (
     <div
-      className="flex w-full justify-center m-2 hover:cursor-pointer "
+      className="m-2 flex w-full justify-center hover:cursor-pointer "
       onClick={() => {
         router.push(url)
       }}
     >
-      <div className="mr-2 w-12 h-12 md:w-20 md:h-20">
+      <div className="mr-2 h-12 w-12 md:h-20 md:w-20">
         <img
           src={image}
           alt={shortname}
-          className="h-full object-scale-down aspect-square rounded-full bg-neutral-100 dark:bg-white"
+          className="aspect-square h-full rounded-full bg-neutral-100 object-scale-down dark:bg-white"
         ></img>
       </div>
-      <div className="flex-1 flex flex-col justify-center mx-1 grow">
+      <div className="mx-1 flex flex-1 grow flex-col justify-center">
         <p className="font-semibold md:text-lg lg:text-xl">{title}</p>
-        <p className="text-gray-900 text-sm md:text-md lg:text-lg dark:text-gray-100 ">
+        <p className="md:text-md text-sm text-gray-900 dark:text-gray-100 lg:text-lg ">
           {organization}
         </p>
       </div>

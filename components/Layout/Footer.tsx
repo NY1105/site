@@ -14,9 +14,9 @@ const Footer = () => {
     { label: 'Contact', link: '/contact' },
   ]
   return (
-    <div className=" px-6 py-4 sm:px-12 md:px-16 lg:px-20  w-full z-20 justify-center sm:justify-start flex border-t-2 border-gray-400 dark:border-gray-700 dark:bg-gray-800 bg-white dark:text-white text-black items-center">
+    <div className=" z-20 flex w-full items-center justify-center  border-t-2 border-gray-400 bg-white px-6 py-4 text-black dark:border-gray-700 dark:bg-gray-800 dark:text-white sm:justify-start sm:px-12 md:px-16 lg:px-20">
       <div
-        className=" hidden underline text-sm hover:cursor-pointer sm:block"
+        className=" hidden text-sm underline hover:cursor-pointer sm:block"
         onClick={() => {
           router.push('/versions')
         }}
@@ -24,11 +24,11 @@ const Footer = () => {
         Version {currentVersion}
       </div>
       <div className="flex flex-col items-center sm:grow sm:items-end ">
-        <div className=" flex justify-middle ">
+        <div className=" justify-middle flex ">
           {buttons.map((button) => (
             <div
               key={button.label}
-              className="mx-1 px-3 py-2 text-sm sm:underline decoration-1 rounded-md  "
+              className="mx-1 rounded-md px-3 py-2 text-sm decoration-1 sm:underline  "
             >
               <Link href={button.link} className="hover:cursor-pointer">
                 {button.label}
@@ -37,7 +37,7 @@ const Footer = () => {
           ))}
         </div>
         <div
-          className="underline text-xs text-gray-500 hover:cursor-pointer sm:hidden"
+          className="text-xs text-gray-500 underline hover:cursor-pointer sm:hidden"
           onClick={() => {
             router.push('/versions')
           }}

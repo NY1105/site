@@ -9,10 +9,10 @@ const RenderProjects = () => {
     <RenderContainer divClassName="flex-1">
       <div className="flex flex-col">
         <div className="flex">
-          <div className="text-2xl px-1 py-2">Projects</div>
+          <div className="px-1 py-2 text-2xl">Projects</div>
           <div className="flex-1"></div>
           <div
-            className="flex flex-col justify-center py-1 px-2 mx-4 my-2 text-sm bg-gray-300 dark:bg-gray-800 rounded-md hover:cursor-pointer hover:bg-gray-100"
+            className="mx-4 my-2 flex flex-col justify-center rounded-md bg-gray-300 py-1 px-2 text-sm hover:cursor-pointer hover:bg-gray-100 dark:bg-gray-800"
             onClick={() => {
               router.push('/projects')
             }}

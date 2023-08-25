@@ -11,7 +11,9 @@ const versions = () => {
           {versions.map((version) => (
             <div
               key={version.version}
-              className={`border-2 rounded-lg p-4 my-2  border-gray-400 dark:border-white ${version.display ? '' : 'hidden'}`}
+              className={`my-2 rounded-lg border-2 border-gray-400  p-4 dark:border-white ${
+                version.display ? '' : 'hidden'
+              }`}
             >
               <div className="text-xl">{version.version}</div>
               <img src={version.image} alt={version.version} />

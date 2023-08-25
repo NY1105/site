@@ -34,31 +34,33 @@ const RenderContact = () => {
   ]
   return (
     <RenderContainer title="Contact">
-      <div className="pb-3 flex flex-col justify-center ">
+      <div className="flex flex-col justify-center pb-3 ">
         {contacts.map((contact) => (
           <div
-            className="border-b-2 border-gray-300 dark:border-gray-800 pb-3 flex flex-col justify-center"
+            className="flex flex-col justify-center border-b-2 border-gray-300 pb-3 dark:border-gray-800"
             key={contact.label}
           >
-            <div className=" flex justify-center my-1 py-1 ">
+            <div className=" my-1 flex justify-center py-1 ">
               <div className="mx-2 p-1">
                 <img
                   src={contact.image}
                   alt={contact.label}
-                  className="w-12 md:w-20 hover:cursor-pointer bg-white rounded-xl aspect-square"
+                  className="aspect-square w-12 rounded-xl bg-white hover:cursor-pointer md:w-20"
                   onClick={contact.function}
                 ></img>
               </div>
-              <div className=" flex flex-col justify-center mx-1 grow overflow-hidden hover:cursor-pointer">
+              <div className=" mx-1 flex grow flex-col justify-center overflow-hidden hover:cursor-pointer">
                 <div
-                  className={`${contact.label == copying?'bg-green-300':''} sm:bg-transparent text-center sm:text-left rounded-md p-1 font-semibold md:text-lg lg:text-xl`}
+                  className={`${
+                    contact.label == copying ? 'bg-green-300' : ''
+                  } rounded-md p-1 text-center font-semibold sm:bg-transparent sm:text-left md:text-lg lg:text-xl`}
                   onClick={contact.function}
                 >
                   {contact.label}
                 </div>
                 <div className="flex max-h-6">
                   <div
-                    className="hidden sm:block text-gray-900 text-sm h-4 underline md:text-md lg:text-lg dark:text-gray-100 hover:cursor-pointer"
+                    className="md:text-md hidden h-4 text-sm text-gray-900 underline hover:cursor-pointer dark:text-gray-100 sm:block lg:text-lg"
                     onClick={contact.function}
                   >
                     {contact.url}
@@ -67,8 +69,8 @@ const RenderContact = () => {
                   <img
                     className={
                       contact.label == copying
-                        ? 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-green-300 hover:cursor-pointer aspect-square'
-                        : 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-gray-200 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:cursor-pointer aspect-square'
+                        ? 'm-0 ml-2 hidden aspect-square w-6 rounded-md bg-green-300 p-1 hover:cursor-pointer sm:block'
+                        : 'm-0 ml-2 hidden aspect-square w-6 rounded-md bg-gray-200 p-1 hover:cursor-pointer hover:bg-gray-300 dark:bg-gray-500 dark:hover:bg-gray-800 sm:block'
                     }
                     src="/utils/copy.svg"
                     onClick={() => {

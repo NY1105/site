@@ -9,19 +9,19 @@ const ProjectDetails = (props: Project) => {
   return (
     <RenderContainer divClassName="" childrenClassName=" ">
       <div className="lg:px-8 lg:pb-8">
-        <div className="flex flex-col md:flex-row m-2 h-fit">
+        <div className="m-2 flex h-fit flex-col md:flex-row">
           <div className="flex flex-col justify-center">
             <div className="mb-4 pb-4 text-xl md:text-4xl">{title}</div>
           </div>
           <div className="flex-1"></div>
-          <div className="h-full flex flex-col m-1 items-center ">
+          <div className="m-1 flex h-full flex-col items-center ">
             <img
               src={`/projects/${image}`}
               alt={name}
-              className="h-20 md:h-28 object-scale-down bg-gray-200 rounded-lg p-1 aspect-square"
+              className="aspect-square h-20 rounded-lg bg-gray-200 object-scale-down p-1 md:h-28"
             ></img>
             <div
-              className="my-2 px-2 py-1 w-2/3 md:w-full text-center text-sm md:text-base bg-gray-100 dark:bg-gray-600 rounded-md border-2 border-black dark:border-white hover:cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700"
+              className="my-2 w-2/3 rounded-md border-2 border-black bg-gray-100 px-2 py-1 text-center text-sm hover:cursor-pointer hover:bg-gray-300 dark:border-white dark:bg-gray-600 dark:hover:bg-gray-700 md:w-full md:text-base"
               onClick={() => router.push(url)}
             >
               Visit the project

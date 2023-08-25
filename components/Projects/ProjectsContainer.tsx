@@ -9,7 +9,7 @@ const ProjectsContainer = () => {
     return b.id - a.id
   })
   return (
-    <div className="pb-3 overflow-y-scroll h-[30rem]">
+    <div className="h-[30rem] overflow-y-scroll pb-3">
       {projects.map((project: Project) => (
         <ProjectContainer
           key={`${project}-${project.id}`}

@@ -6,8 +6,6 @@ import {
 } from 'eventsource-parser'
 
 export const langchainStream = async (messages: Message[]) => {
-
-
   const question = messages[messages.length - 1].content || ''
   const res = await fetch(String(process.env.API_PATH), {
     method: 'POST',

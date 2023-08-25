@@ -21,7 +21,7 @@ const RenderChatbot = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': String(process.env.NEXT_PUBLIC_API_KEY)
+        'x-api-key': String(process.env.NEXT_PUBLIC_API_KEY),
       },
       body: JSON.stringify({
         question: message.content,
