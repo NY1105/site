@@ -5,7 +5,7 @@ Built with Next.js, TailwindCSS and more...
 
 > This app was built to showcase the skills I have learnt including Next.js, TailwindCSS, and more.
 
-### Current version: 2.2.1
+### Current version: 2.2.2
 ---
 ## How to start the app
 

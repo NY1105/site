@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
+import { FiSun, FiMoon } from 'react-icons/fi'
 
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -13,29 +14,17 @@ const Navbar = () => {
       return null
     }
     const currentTheme = theme === 'system' ? systemTheme : theme
-    if (currentTheme === 'light') {
-      return (
-        <img
-          className="m-1 object-scale-down h-6 aspect-square"
-          src="/utils/moon.svg"
-          alt="moon"
-          onClick={() => {
-            setTheme('dark')
-          }}
-        />
-      )
-    } else {
-      return (
-        <img
-          className="m-1 object-scale-down h-6 aspect-square"
-          src="/utils/sun.svg"
-          alt="sun"
-          onClick={() => {
-            setTheme('light')
-          }}
-        />
-      )
-    }
+    return currentTheme === 'light' ? (
+      <FiMoon
+        className="m-1 object-scale-down h-6 aspect-square"
+        onClick={() => setTheme('dark')}
+      />
+    ) : (
+      <FiSun
+        className="m-1 object-scale-down h-6 aspect-square"
+        onClick={() => setTheme('light')}
+      />
+    )
   }
   let router = useRouter()
   const buttons = [
@@ -81,7 +70,7 @@ const Navbar = () => {
           </div>
         ))}
       </div>
-      <div className="items-center justify-center hover:cursor-pointer rounded-md dark:hover:bg-gray-700 light:hover:bg-gray-200 p-1">
+      <div className="items-center justify-center hover:cursor-pointer rounded-md hover:bg-gray-100 dark:hover:bg-gray-700  p-1">
         {renderThemeChanger()}
       </div>
     </nav>

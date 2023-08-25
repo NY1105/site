@@ -1,6 +1,6 @@
 {
   "name": "refrontend",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -27,6 +27,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
     "tailwindcss": "^3.2.7"
   },
   "engines": {
